@@ -3,6 +3,7 @@ import re
 import requests
 import json
 
+#12306网站上所有车站信息
 url = "https://kyfw.12306.cn/otn/resources/js/framework/station_name.js?station_version=1.8955"
 
 def spase_statons():
