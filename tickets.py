@@ -39,6 +39,7 @@ def command_line():
     date_station = arguments['<date>']
 
     # Construct url
+    # 查询车票信息url
     url = "https://kyfw.12306.cn/otn/lcxxcx/query?purpose_codes=ADULT&queryDate=%s&from_station=%s&to_station=%s" % (date_station, from_station, to_station)
     #print url
     try:
@@ -48,6 +49,7 @@ def command_line():
         datas = request.json()['data']['datas']
 
         trains = train_collection.train_collection(datas)
+        # 利用prettytable实现类似mysql格式
         trains.pretty_print()
         #
     except:
